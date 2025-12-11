@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiply Three Numbers</title>
+</head>
+<body>
+  <h1>Multiply Three Numbers</h1>
+  <p>
+    <label>A: <input type="number" id="a" value="2"></label>
+    <label>B: <input type="number" id="b" value="3"></label>
+    <label>C: <input type="number" id="c" value="4"></label>
+    <button id="calc">Multiply</button>
+  </p>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById('output');
+    document.getElementById('calc').addEventListener('click', () => {
+      const a = Number(document.getElementById('a').value);
+      const b = Number(document.getElementById('b').value);
+      const c = Number(document.getElementById('c').value);
+      const product = a * b * c;
+      output.textContent = `${a} × ${b} × ${c} = ${product}`;
+    });
+  </script>
+</body>
+</html>

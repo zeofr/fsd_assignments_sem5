@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My blog about my life</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    header {
+      background-color: #ffff00;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    header h1 {
+      font-size: 32px;
+      color: #000;
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
+      padding: 20px;
+    }
+    nav {
+      flex: 0 0 120px;
+      background-color: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+    nav h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    nav ul {
+      list-style: none;
+    }
+    nav li {
+      margin-bottom: 8px;
+    }
+    nav a {
+      color: #0066cc;
+      text-decoration: underline;
+      font-size: 12px;
+    }
+    main {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    article {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    article:last-child {
+      border-bottom: none;
+    }
+    article h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #000;
+    }
+    .date {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    article p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    aside {
+      flex: 0 0 150px;
+      background-color: #fff;
+      padding: 15px;
+      border: 2px dashed #00aa00;
+    }
+    aside h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    aside ul {
+      list-style: none;
+    }
+    aside li {
+      margin-bottom: 8px;
+      text-align: center;
+      font-size: 12px;
+    }
+    aside a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #f0f0f0;
+      padding: 15px;
+      text-align: center;
+      font-size: 12px;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My blog about my life</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#today">Today</a></li>
+        <li><a href="#yesterday">Yesterday</a></li>
+        <li><a href="#lastweek">Last week</a></li>
+        <li><a href="#archives">Archives</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <article>
+        <h3>Meeting with supervisor</h3>
+        <div class="date">14 Dec 2011</div>
+        <p>Today I went to the university by bus.</p>
+        <p>I had a seat with my PhD supervisor.</p>
+      </article>
+
+      <article>
+        <h3>New car!!!</h3>
+        <div class="date">12 Dec 2011</div>
+        <p>Today I bought my new car. It's a Honda Accord and it's really nice.</p>
+        <p>I met some friends at a pub.</p>
+      </article>
+
+      <article>
+        <h3>Visit my parents</h3>
+        <div class="date">10 Dec 2011</div>
+        <p>Tried to contact my PhD supervisor. He was out of his office.</p>
+        <p>I visited my parents and we had a nice dinner together.</p>
+      </article>
+    </main>
+
+    <aside>
+      <h2>Last posts</h2>
+      <ul>
+        <li><a href="#supervisor">Meeting with supervisor</a></li>
+        <li><a href="#newcar">New car!!!</a></li>
+        <li><a href="#parents">Visit my parents</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer>
+    <p>Contact me: <a href="mailto:email@example.com">email@example.com</a></p>
+  </footer>
+</body>
+</html>

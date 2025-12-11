@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISC Questionare</title>
+</head>
+<body>
+  <h1>ISC Questionare</h1>
+  <form>
+    <p>
+      <label for="studentName">Student Name: </label>
+      <input type="text" id="studentName" name="studentName" size="40">
+    </p>
+    <p>
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" size="40">
+    </p>
+
+    <p>Prefered Courses:</p>
+    <p>
+      <label><input type="checkbox" name="courses" value="networks">Networks</label>
+      <label><input type="checkbox" name="courses" value="web">Web Programming</label>
+      <label><input type="checkbox" name="courses" value="ds">Data Structures</label>
+      <label><input type="checkbox" name="courses" value="os">OS</label>
+    </p>
+
+    <p>How many hours you study every day?</p>
+    <p>
+      <label><input type="radio" name="hours" value="1-3"> 1-3 hours</label>
+      <label><input type="radio" name="hours" value="4-5"> 4-5 hours</label>
+      <label><input type="radio" name="hours" value="6+"> more than 6 hours</label>
+    </p>
+
+    <p>
+      <label for="rating">Rate ISC Department: </label>
+      <select id="rating" name="rating">
+        <option>Excellent</option>
+        <option>Very Good</option>
+        <option>Good</option>
+        <option>Average</option>
+      </select>
+    </p>
+
+    <p>Further Comments:</p>
+    <p>
+      <textarea name="comments" rows="6" cols="70"></textarea>
+    </p>
+
+    <p>
+      <button type="reset">Reset</button>
+      <button type="submit">Submit Form</button>
+    </p>
+  </form>
+</body>
+</html>

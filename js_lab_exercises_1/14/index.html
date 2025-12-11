@@ -1,0 +1,23 @@
+<!-- Q14: Registration form with validation (password match, required fields, email, year 1900-2000, terms). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validated Registration</title>
+</head>
+<body>
+  <h1>Registration</h1>
+  <form id="regForm" novalidate>
+    <p><label>Name: <input type="text" name="name" required></label></p>
+    <p><label>User name: <input type="text" name="username" required></label></p>
+    <p><label>Password: <input type="password" name="password" required></label></p>
+    <p><label>Confirm password: <input type="password" name="confirm" required></label></p>
+    <p><label>Year of birth: <input type="number" name="yob" min="1900" max="2000" placeholder="YYYY" required></label></p>
+    <p><label>Email: <input type="email" name="email" required></label></p>
+    <p><label><input type="checkbox" name="terms" required> I agree to the terms</label></p>
+    <p><button type="submit">Register</button></p>
+    <ul id="errors" style="color:red;"></ul>
+  </form>
+  <script src="./validation.js"></script>
+</body>
+</html>

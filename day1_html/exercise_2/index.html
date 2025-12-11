@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Order Form</title>
+</head>
+<body>
+  <h1>Book Order Form</h1>
+  <form autocomplete="on">
+    <fieldset>
+      <legend>Customer Info</legend>
+      
+      <p>
+        <label for="name">Name:</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="Enter your full name" 
+          autofocus 
+          required>
+      </p>
+
+      <p>
+        <label for="telephone">Telephone:</label>
+        <input 
+          type="tel" 
+          id="telephone" 
+          name="telephone" 
+          placeholder="123-456-7890" 
+          pattern="[0-9\-\+\(\)\s]+" 
+          required>
+      </p>
+
+      <p>
+        <label for="email">Email address:</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="example@example.com" 
+          multiple 
+          required>
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Books</legend>
+      
+      <p>
+        <label for="books">Select Books:</label>
+        <datalist id="bookList">
+          <option value="The Great Gatsby">
+          <option value="To Kill a Mockingbird">
+          <option value="1984">
+          <option value="Pride and Prejudice">
+          <option value="The Catcher in the Rye">
+          <option value="Jane Eyre">
+          <option value="Wuthering Heights">
+          <option value="The Hobbit">
+        </datalist>
+        <input 
+          type="text" 
+          id="books" 
+          name="books" 
+          list="bookList" 
+          placeholder="Type or select a book">
+      </p>
+
+      <p>
+        <label for="quantity">Quantity (Maximum 5):</label>
+        <input 
+          type="number" 
+          id="quantity" 
+          name="quantity" 
+          min="1" 
+          max="5" 
+          value="1">
+      </p>
+    </fieldset>
+
+    <p>
+      <button type="submit">Submit Order</button>
+      <button type="reset">Clear Form</button>
+    </p>
+  </form>
+</body>
+</html>

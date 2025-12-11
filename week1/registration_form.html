@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New User Registration Form</title>
+</head>
+<body>
+  <h1>New User Registration Form</h1>
+  <form>
+    <p>
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" size="30">
+    </p>
+
+    <p>
+      <label for="email">E-mail Address: </label>
+      <input type="email" id="email" name="email" size="30" placeholder="name@domain.com">
+</p>
+    <p>
+      <label for="dob">Date of Birth </label>
+      <input type="date" id="dob" name="dob" placeholder="yyyy-mm-dd">
+      <span>(yyyy-mm-dd)</span>
+    </p><p>
+      <label for="experience">HTML Experience Years: </label>
+      <span id="expValue">0</span>
+      <input type="range" id="experience" name="experience" min="0" max="100" value="0" oninput="expValue.textContent=this.value">
+      <span>100 years.</span>
+    </p>
+    <p>
+      <label for="children">Number of Children: </label>
+      <input type="number" id="children" name="children" min="0" max="20" value="0" style="width:50px">
+    </p>
+    <p>
+
+      <label for="url">Personal Page URL: </label>
+      <input type="url" id="url" name="url" size="30" placeholder="http://domain.com">
+    </p>
+    <p>
+      <label for="renewal">Registration renewal month: </label>
+      
+      <input type="month" id="renewal" name="renewal">
+    </p>
+
+
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+    <p>
+      <button type="reset">Clear</button>
+    </p>
+  </form>
+</body></html>

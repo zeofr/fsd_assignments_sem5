@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Info</title>
+</head>
+<body>
+  <!-- Q17: Form collects name, age, hometown; on submit show birth year and a search link for hometown. -->
+  <h1>User Info</h1>
+  <form id="infoForm">
+    <p><label>Name: <input type="text" name="name" required></label></p>
+    <p><label>Age: <input type="number" name="age" min="0" required></label></p>
+    <p><label>Hometown: <input type="text" name="hometown" required></label></p>
+    <p><button type="submit">Submit</button></p>
+  </form>
+  <div id="result"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
