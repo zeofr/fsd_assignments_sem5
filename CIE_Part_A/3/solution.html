@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3 - Student Data</title>
+</head>
+<body>
+    <h2>Student Academic Data</h2>
+    <div id="output"></div>
+
+    <script>
+        /*
+        Write a JavaScript program using closures to manage student academic data. 
+        Accept USN, Subject Code, Subject Name, CIE Marks, and SEE Marks. 
+        Use closures to keep CIE and SEE marks private. 
+        Write a method to compute and return the total marks. 
+        Display student details with total.
+        */
+
+        function createStudent(usn, subCode, subName, cie, see) {
+            let cieMarks = cie;
+            let seeMarks = see;
+            
+            return {
+                getDetails: function() {
+                    return {
+                        usn: usn,
+                        subjectCode: subCode,
+                        subjectName: subName,
+                        totalMarks: cieMarks + seeMarks
+                    };
+                }
+            };
+        }
+
+        // Test
+        const student = createStudent('1RV21CS001', 'CS101', 'Full Stack Development', 40, 85);
+        const details = student.getDetails();
+        
+        document.getElementById('output').innerHTML = `
+            <p>USN: ${details.usn}</p>
+            <p>Subject Code: ${details.subjectCode}</p>
+            <p>Subject Name: ${details.subjectName}</p>
+            <p>Total Marks: ${details.totalMarks}</p>
+        `;
+    </script>
+</body>
+</html>
