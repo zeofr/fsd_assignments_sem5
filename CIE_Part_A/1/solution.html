@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q1 - Translate Function</title>
+</head>
+<body>
+    <h2>Translate Function</h2>
+    <input type="text" id="inputField" placeholder="Enter text">
+    <button onclick="performTranslate()">Translate</button>
+    <p>Input: <span id="input"></span></p>
+    <p>Output: <span id="output"></span></p>
+
+    <script>
+        /*
+        Write a function translate() that will translate a text i.e, double every consonant 
+        and place an occurrence of "o" in between. For example, translate("this is fun") 
+        should return the string "tothohisos isos fofunon".
+        */
+
+        function translate(text) {
+            let result = '';
+            const vowels = 'aeiouAEIOU';
+            
+            for (let char of text) {
+                if (char.match(/[a-zA-Z]/) && !vowels.includes(char)) {
+                    result += char + 'o' + char.toLowerCase();
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        function performTranslate() {
+            const input = document.getElementById('inputField').value;
+            const output = translate(input);
+            
+            document.getElementById('input').innerHTML = input;
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

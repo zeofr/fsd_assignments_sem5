@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q9 - Anonymous Functions</title>
+</head>
+<body>
+    <h2>Anonymous Functions</h2>
+    <div id="output"></div>
+
+    <script>
+        /*
+        Write a JavaScript program using Anonymous Functions.
+        A. Create an anonymous function assigned to a variable to calculate the sum of two numbers.
+        B. Create another anonymous function to display whether the entered number is even or odd.
+        C. Display both results on the browser using document.write() or console output.
+        */
+
+        // A. Sum of two numbers
+        const sum = function(a, b) {
+            return a + b;
+        };
+
+        // B. Even or Odd
+        const checkEvenOdd = function(num) {
+            return num % 2 === 0 ? 'Even' : 'Odd';
+        };
+
+        // C. Display results
+        const num1 = 10, num2 = 20;
+        const testNum = 15;
+
+        document.getElementById('output').innerHTML = `
+            <p>Sum of ${num1} and ${num2}: ${sum(num1, num2)}</p>
+            <p>${testNum} is ${checkEvenOdd(testNum)}</p>
+        `;
+
+        console.log('Sum:', sum(num1, num2));
+        console.log(testNum, 'is', checkEvenOdd(testNum));
+    </script>
+</body>
+</html>

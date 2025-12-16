@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q4 - Pluralize Function</title>
+</head>
+<body>
+    <h2>Pluralize Function</h2>
+    <div id="output"></div>
+
+    <script>
+        /*
+        Write a javascript function named pluralize that:
+        a. takes 2 arguments, a noun and a number.
+        b. returns the number and pluralized form, like "5 cats" or "1 dog".
+        */
+
+        function pluralize(noun, number) {
+            if (number === 1) {
+                return number + ' ' + noun;
+            } else {
+                return number + ' ' + noun + 's';
+            }
+        }
+
+        // Test
+        document.getElementById('output').innerHTML = `
+            <p>${pluralize('cat', 5)}</p>
+            <p>${pluralize('dog', 1)}</p>
+            <p>${pluralize('book', 3)}</p>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q10 - Ticket Booking Counter</title>
+</head>
+<body>
+    <h2>Ticket Booking Counter System</h2>
+    <button onclick="book()">Book Ticket</button>
+    <div id="output"></div>
+
+    <script>
+        /*
+        Create a Ticket Booking Counter system using Lexical Scoping and Closures.
+        Requirements:
+        A. Create a function ticketCounter() that initializes a variable tickets = 0.
+        B. Inside it, define another function bookTicket() that:
+           - increments tickets by 1 each time it is called
+           - displays: "Ticket booked. Total tickets: X"
+        C. Return the inner function from the outer function to form a closure.
+        D. Call the returned function three times and display the output
+        */
+
+        function ticketCounter() {
+            let tickets = 0;
+            
+            return function bookTicket() {
+                tickets++;
+                return `Ticket booked. Total tickets: ${tickets}`;
+            };
+        }
+
+        const book = ticketCounter();
+
+        // Display output
+        let output = '';
+        for (let i = 0; i < 3; i++) {
+            output += '<p>' + book() + '</p>';
+        }
+        document.getElementById('output').innerHTML = output;
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "vowel-count",
+  "version": "1.0.0",
+  "description": "Count vowels in a string",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

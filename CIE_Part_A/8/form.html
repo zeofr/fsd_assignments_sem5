@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Q8 - Form Validation</title>
+    <script type="text/javascript">
+        /*
+        Develop, test, and validate an XHTML document that collects the following information 
+        from the user: last name, first name, middle initial, age (restricted to be greater 
+        than 17), and weight (restricted to the range of 45-75). You must have event handlers 
+        for the form elements that collect this information that check the input data for 
+        correctness. Messages in alert windows must be produced when errors are detected.
+        */
+
+        function validateAge() {
+            var age = document.getElementById('age').value;
+            if (age <= 17) {
+                alert('Age must be greater than 17');
+                return false;
+            }
+            return true;
+        }
+
+        function validateWeight() {
+            var weight = document.getElementById('weight').value;
+            if (weight < 45 || weight > 75) {
+                alert('Weight must be between 45 and 75');
+                return false;
+            }
+            return true;
+        }
+
+        function validateForm() {
+            return validateAge() && validateWeight();
+        }
+    </script>
+</head>
+<body>
+    <h2>User Information Form</h2>
+    <form onsubmit="return validateForm()">
+        <p>First Name: <input type="text" id="firstName" required="required" /></p>
+        <p>Last Name: <input type="text" id="lastName" required="required" /></p>
+        <p>Middle Initial: <input type="text" id="middleInitial" maxlength="1" /></p>
+        <p>Age: <input type="number" id="age" onblur="validateAge()" required="required" /></p>
+        <p>Weight (kg): <input type="number" id="weight" onblur="validateWeight()" required="required" /></p>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
