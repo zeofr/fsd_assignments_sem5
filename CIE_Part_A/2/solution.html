@@ -18,20 +18,33 @@
            portion of the number.
         */
 
-        function convertMonth() {
+        // Outer function creates closure with months array
+        function createMonthConverter() {
             const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                          'July', 'August', 'September', 'October', 'November', 'December'];
+                           'July', 'August', 'September', 'October', 'November', 'December'];
             
+            // Inner function has access to months through closure
+            return function (monthNumber) {
+                const num = parseFloat(monthNumber);
+                
+                if (isNaN(num) || num < 1 || num > 12) {
+                    return "Bad Number";
+                }
+                
+                // Strip decimal portion
+                const index = Math.floor(num) - 1;
+                return months[index];
+            };
+        }
+
+        // Create the converter function (closure)
+        const getMonthName = createMonthConverter();
+
+        // Click handler
+        function convertMonth() {
             const input = document.getElementById('monthNumber').value;
-            const num = parseFloat(input);
-            
-            if (isNaN(num) || num < 1 || num > 12) {
-                document.getElementById('monthName').innerHTML = "Bad Number";
-                return;
-            }
-            
-            const index = Math.floor(num) - 1;
-            document.getElementById('monthName').innerHTML = months[index];
+            const result = getMonthName(input);
+            document.getElementById('monthName').innerHTML = result;
         }
     </script>
 </body>

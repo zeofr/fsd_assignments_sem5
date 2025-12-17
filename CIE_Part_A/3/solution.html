@@ -2,9 +2,57 @@
 <html>
 <head>
     <title>Q3 - Student Data</title>
+    <style>
+        .form-group {
+            margin: 10px 0;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px 20px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h2>Student Academic Data</h2>
+    
+    <form id="studentForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label>USN:</label>
+            <input type="text" id="usn" required>
+        </div>
+        <div class="form-group">
+            <label>Subject Code:</label>
+            <input type="text" id="subCode" required>
+        </div>
+        <div class="form-group">
+            <label>Subject Name:</label>
+            <input type="text" id="subName" required>
+        </div>
+        <div class="form-group">
+            <label>CIE Marks:</label>
+            <input type="number" id="cie" min="0" max="50" required>
+        </div>
+        <div class="form-group">
+            <label>SEE Marks:</label>
+            <input type="number" id="see" min="0" max="50" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
     <div id="output"></div>
 
     <script>
@@ -21,7 +69,7 @@
             let seeMarks = see;
             
             return {
-                getDetails: function() {
+                getDetails() {
                     return {
                         usn: usn,
                         subjectCode: subCode,
@@ -32,16 +80,27 @@
             };
         }
 
-        // Test
-        const student = createStudent('1RV21CS001', 'CS101', 'Full Stack Development', 40, 85);
-        const details = student.getDetails();
-        
-        document.getElementById('output').innerHTML = `
-            <p>USN: ${details.usn}</p>
-            <p>Subject Code: ${details.subjectCode}</p>
-            <p>Subject Name: ${details.subjectName}</p>
-            <p>Total Marks: ${details.totalMarks}</p>
-        `;
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const usn = document.getElementById('usn').value;
+            const subCode = document.getElementById('subCode').value;
+            const subName = document.getElementById('subName').value;
+            const cie = parseInt(document.getElementById('cie').value);
+            const see = parseInt(document.getElementById('see').value);
+            
+            const student = createStudent(usn, subCode, subName, cie, see);
+            const details = student.getDetails();
+            
+            document.getElementById('output').innerHTML = `
+                <h3>Student Details</h3>
+                <p><strong>USN:</strong> ${details.usn}</p>
+                <p><strong>Subject Code:</strong> ${details.subjectCode}</p>
+                <p><strong>Subject Name:</strong> ${details.subjectName}</p>
+                <p><strong>Total Marks:</strong> ${details.totalMarks}</p>
+                <p><strong>Total Marks:</strong> ${details.seeMarks}</p>
+            `;
+        }
     </script>
 </body>
 </html>

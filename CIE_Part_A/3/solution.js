@@ -32,6 +32,7 @@ console.log('Subject Code:', details.subjectCode);
 console.log('Subject Name:', details.subjectName);
 console.log('Total Marks:', details.totalMarks);
 
+
 // Demonstrating that marks are private
 console.log('\n=== Closure Privacy ===');
 console.log('Accessing student.cieMarks:', student.cieMarks); // undefined - private!

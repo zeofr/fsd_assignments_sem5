@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Ticket Booking Counter System</h2>
-    <button onclick="book()">Book Ticket</button>
+    <button onclick="handleBooking()">Book Ticket</button>
     <div id="output"></div>
 
     <script>
@@ -31,12 +31,11 @@
 
         const book = ticketCounter();
 
-        // Display output
-        let output = '';
-        for (let i = 0; i < 3; i++) {
-            output += '<p>' + book() + '</p>';
+        function handleBooking() {
+            const message = book();
+            const output = document.getElementById('output');
+            output.innerHTML += '<p>' + message + '</p>';
         }
-        document.getElementById('output').innerHTML = output;
     </script>
 </body>
 </html>
